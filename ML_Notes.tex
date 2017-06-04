@@ -222,6 +222,11 @@ output =
 \end{cases}
 $$
 
+\subsection{Sigmoid Function}
+One of the key limitations of a perceptron is that its output is completely binary, meaning that despite any small changes in the inputs, the output will always be either 0 or 1. In practice, this wouldn't make sense especially since we want to account for these small changes in the inputs with changes in the output of a neuron. Instead of a perceptron, a sigmoid neuron can be more effective since it is able to output non binary values as outputs (range of numbers between 0 and 1).
+
+The sigmoid functions takes in inputs \(x_1\), \(x_2\), \(...\) and computes the following function: \(\sigma (z) = \frac{1}{1+e^{-z}}\), where \(z\) is \(\sum w_{i}x_i + b\). This application of the sigmoid function makes sense because as \(z\) becomes large, the output approaches 1 and when \(z\)becomes small, the output of the neuron approaches 0. The sigmoid function is known as an \textit{activation function}.
+
 
 
 \def\layersep{2.5cm}
