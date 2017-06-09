@@ -227,10 +227,10 @@ One of the key limitations of a perceptron is that its output is completely bina
 
 The sigmoid functions takes in inputs \(x_1\), \(x_2\), \(...\) and computes the following function: \(\sigma (z) = \frac{1}{1+e^{-z}}\), where \(z\) is \(\sum w_{i}x_i + b\). This application of the sigmoid function makes sense because as \(z\) becomes large, the output approaches 1 and when \(z\)becomes small, the output of the neuron approaches 0. The sigmoid function is known as an \textit{activation function}.
 
-
+Now that we've defined the types of neurons, we can combine this knowledge together into what is known as a neural network, where neurons are connected to one another and ultimately receive inputs and calculate outputs based on this activation function.
 
 \def\layersep{2.5cm}
-\centering
+
 \begin{tikzpicture}[shorten >=1pt,->,draw=black!100, node distance=\layersep]
     \tikzstyle{every pin edge}=[<-,shorten <=1pt]
     \tikzstyle{neuron}=[circle,fill=black!25,minimum size=17pt,inner sep=0pt]
@@ -270,6 +270,33 @@ The sigmoid functions takes in inputs \(x_1\), \(x_2\), \(...\) and computes the
 \node[annot,left of=hl] {Input layer};
 \node[annot,right of=hl] {Output layer};
 \end{tikzpicture}
+
+\section{Determining the Weights and Biases for a Neuron}
+One key point about neural networks is that we don't automatically set the weights and biases for the neurons to their perfect values for optimal prediction. Instead, for a specific problem, we want the neural network to automatically adjust and recalculate the weights and biases to minimize the difference between the true outputs versus the predicted values. Based on this idea, we can define what is known as a cost (or loss) function:
+
+$$
+C(w,b) = \frac{1}{2n}\sum\parallel y(x)-a\parallel^{2}
+$$
+
+In this function C(w,b),  \(w\) is the collections of weights, \(b\) is the biases, \(n\) is the number of inputs, \(a\) is the outputs from the network, and \(y(x)\) is the true values for the outputs. By using this cost function, it is simpler to determine how changes in weights and biases values can alter the quadratic difference (mean squared error) between predicted vs. true outputs.
+
+Fundamentally, the concept behind this cost function, as mentioned before, is that we want to minimize this value. The cost function itself is dependent on any sort of variables in the dataset and in the case of these notes, we'll define those variables as \(v_1, v_2, v_3, ...\) .
+
+Gradient descent works by finding the /textit{gradient} of the cost function, which essentially consists of the partial derivates for each variable used in the inputs to the neural network.
+
+$$
+\nabla C = \left (\frac{\partial C}{\partial v_1} , \frac{\partial C}{\partial v_2}, ... \right )
+$$
+
+By finding this gradient vector, we can continuously update the point-based position and then recalculate the gradient until the cost function is minimized.
+
+\section{Backpropagation}
+
+
+
+
+
+
 
 
 
