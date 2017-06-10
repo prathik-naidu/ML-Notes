@@ -291,8 +291,11 @@ $$
 By finding this gradient vector, we can continuously update the point-based position and then recalculate the gradient until the cost function is minimized.
 
 \section{Backpropagation}
+Great, so now we know how to get our neural network to learn weights and biases by calculating a gradient vector, but I still haven't mentioned exactly how to do this step, known formally as \textit{backpropagation}. I'll probably come back and fill in this section later with the math behind backpropagation but here is a brief explanation of the fundamentals:
 
+Without going into the specific calculus-level details, this algorithm functions by first doing a standard feedforward approach, which calculates the activation values for each layer of the neural network. However, one effect of this is that changes in the weights and biases of neurons in various layers can ultimately impact the overall cost function. As a result, an error is calculated at the last output layers, and this error is backpropagated for all the previous layers in order to determine the gradient of the cost function.
 
+This might sound a bit confusing without seeing the math, but from a bigger picture, imagine that we change the weight of a single neuron in a layer. Ultimately, that changes the output activation of that neuron, which subsequently changes all the activations of neurons in the next layer, which then impacts all the neurons int he following layer, and so on. Intuitively, this algorithm can determine how certain changes in weights are carried through and impact subsequent layers of the neural network, which from there changes the cost function. By backpropagating, we can understand the impact of these changes, and calculate the gradient of the cost function with respect to alterations in the weights and biases of neurons in the network. 
 
 
 
