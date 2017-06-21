@@ -297,6 +297,18 @@ Without going into the specific calculus-level details, this algorithm functions
 
 This might sound a bit confusing without seeing the math, but from a bigger picture, imagine that we change the weight of a single neuron in a layer. Ultimately, that changes the output activation of that neuron, which subsequently changes all the activations of neurons in the next layer, which then impacts all the neurons int he following layer, and so on. Intuitively, this algorithm can determine how certain changes in weights are carried through and impact subsequent layers of the neural network, which from there changes the cost function. By backpropagating, we can understand the impact of these changes, and calculate the gradient of the cost function with respect to alterations in the weights and biases of neurons in the network. 
 
+\section{New Cost Functions, Regularization, and Other Fancy Concepts}
+\subsection{Cross Entropy}
+From a fundamental level, cross entropy is another type of cost function (quadratic cost was discussed earlier), which is an effective way to quickly determine optimal weights and biases for neurons in a network. It's one of the most common ways in which neural networks are optimized and is effective because it prevents any learning slowdown that is notable in a quadratic model. (More mathematical representation to come later on)
+
+\subsection{Softmax}
+Softmax is a type of activation function but rather than outputting a single value between 0 and 1, softmax's algorithm takes in an array of values and outputs individual probabilities (activations represented by \(a\) that all sum to 1. The output of softmax forms a probability distribution and is useful when conducting multi class machine learning problems.
+
+\section{Overfitting and Regularization}
+Overfitting is a well-known term that essentially refers to training an algorithm so that it predicts well on the training data but fails to predict accurately on the test data because the model was overfit to learn unique patterns notable in the training data rather than being generalizable. One classic way to account for this problem is to generate more amount of data to use by the models.
+
+Another mathematical way is to use a technique called regularization, which essentially introduces a parameter that helps the cost function prefer smaller weights that could prevent overfitting without compromising on minimizing the original cost function. The smaller weights essentially make it harder for a neural network to decipher noise within individual inputs and instead helps the network focus on patterns across the overall training set. Basically, regularization prevents the network from learning the noise in the training data that isn't actually helpful in making generalizable predictions about a certain problem.
+
 
 
 

@@ -4,3 +4,7 @@
 \BOOKMARK [2][-]{subsection.2.2}{Sigmoid\040Function}{section.2}% 4
 \BOOKMARK [1][-]{section.3}{Determining\040the\040Weights\040and\040Biases\040for\040a\040Neuron}{}% 5
 \BOOKMARK [1][-]{section.4}{Backpropagation}{}% 6
+\BOOKMARK [1][-]{section.5}{New\040Cost\040Functions,\040Regularization,\040and\040Other\040Fancy\040Concepts}{}% 7
+\BOOKMARK [2][-]{subsection.5.1}{Cross\040Entropy}{section.5}% 8
+\BOOKMARK [2][-]{subsection.5.2}{Softmax}{section.5}% 9
+\BOOKMARK [1][-]{section.6}{Overfitting\040and\040Regularization}{}% 10
