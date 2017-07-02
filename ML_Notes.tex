@@ -309,6 +309,10 @@ Overfitting is a well-known term that essentially refers to training an algorith
 
 Another mathematical way is to use a technique called regularization, which essentially introduces a parameter that helps the cost function prefer smaller weights that could prevent overfitting without compromising on minimizing the original cost function. The smaller weights essentially make it harder for a neural network to decipher noise within individual inputs and instead helps the network focus on patterns across the overall training set. Basically, regularization prevents the network from learning the noise in the training data that isn't actually helpful in making generalizable predictions about a certain problem.
 
+\section{Convolutional Neural Networks}
+Now that we have a basic understanding of the fundamentals of neural networks, let's explore deep learning specifically through a type of architecture called convolutional neural networks. I'm going to go into further detail later on about how these types of networks are implemented, but here's a high level explanation:
+
+We start off with an input image (or even set of images), because CNN's are particularly useful for image-based problems. The idea is that we break down the image focusing on its individual pixels. There is this construction called a \textit{filter} which is a  square sized "mapping function" that essentially are the weights learned by the CNN. The filter starts at the top left of the image with respect to its pixels and strides one by one across the width of the image before moving down one row and repeating. In the process, the filter multiples its vector of weights with the RGB or grayscale value of the pixels to create an overall feature map. Throughout this approach, called convolving, multiple filters can be learned and as a result, there can be multiple feature maps that provide detailed information about various lower-level aspects of the image that wouldn't necessarily be easy to identify using traditional machine learning methods.
 
 
 \end{document}
